@@ -1,0 +1,11 @@
+<div id="msg">
+<%  @messages.each_with_index do |message, index| %>
+  <%= index+1  %>
+  <%= message.content %>
+  <br>
+<% end %>
+</div>
+<%= form_for @message, remote: true do |f| %>
+  <%= f.text_field :content %>
+  <%= f.submit %>
+<% end %>
